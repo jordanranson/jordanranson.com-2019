@@ -1,0 +1,49 @@
+@import "./variables.sass"
+
+*
+  box-sizing: border-box
+
+html,
+body
+  padding: 0
+  margin: 0
+
+body
+  width: 100%
+  min-height: 100vh
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: $font-color
+  font-size: $font-size
+  background-color: $background
+  letter-spacing: -0.025em
+  line-height: 1.3
+
+a
+  color: $font-color
+  text-decoration: none
+
+small
+  font-size: $font-size-sm
+
+strong
+  font-weight: 600
+
+.link
+  display: inline-flex
+  text-decoration: underline
+
+.title
+  font-weight: 600
+  font-size: $title-size
+  &.is-small
+    font-size: $title-size-sm
+
+.rule
+  margin: 0 auto
+  width: 100px
+  height: 4px
+  background: $rule-color
+
+.faded
+  color: $font-color-light
