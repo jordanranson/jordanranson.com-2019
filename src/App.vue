@@ -2,14 +2,14 @@
   <div id="app">
 
     <navigation>
-      <a href="" class="link">Dribbble</a>
-      <a href="" class="link">GitHub</a>
+      <a href="" class="link is-hidden-mobile">Dribbble</a>
+      <a href="" class="link is-hidden-mobile">GitHub</a>
       <a href="#contact" class="link">Contact Me</a>
     </navigation>
 
     <hero-section>
-      Hi, my name is <strong>Jordan</strong>.<br />
-      I’m a <strong>UX</strong>/<strong>UI designer</strong> and <strong>developer</strong>.<br />
+      Hi, my name is <strong>Jordan</strong>.<br class="is-hidden-mobile" />
+      I’m a <strong>UX</strong>/<strong>UI designer</strong> and <strong>developer</strong>.<br class="is-hidden-mobile" />
       I make <strong>apps</strong> and <strong>games</strong>.
     </hero-section>
 
@@ -22,37 +22,50 @@
         <content-column>
           <profile photo-url="//avatars0.githubusercontent.com/u/753511" location="Alberta, Canada" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Curabitur rutrum ut nisi id pharetra. Maecenas in lobortis metus.
-            Nam non tincidunt eros, ac tincidunt ante. Phasellus quis dui.
+            Since I was young I've had an interest in interaction. It started with
+            flipping a light switch as a toddler and steadily grew into a passion
+            for technology, software, and design.
+            <br />
+            Wanting to bring my ideas to life, over the past decade I've honed
+            that passion into a diverse set of user-experience related skills. I
+            typically work on web-based applications, both mobile and desktop,
+            designing workflows and interfaces, and helping implement these concepts
+            in code. Even so, I'm open to new experiences and love exploring
+            new technologies and industries.
+            <br />
+            When I'm not working on side-projects or attending game-jams and hack-a-thons,
+            I enjoy exploring the city on bicycle with my lovely girlfriend,
+            mixing new and unsual cocktails in the kitchen with friends, or taking
+            it easy around the house with my cats.
           </p>
         </content-column>
 
         <!-- Skills -->
         <content-column>
-          <skill-set>
-            <!-- Software -->
-            <skill name="Photoshop" type="design" icon="" />
-            <skill name="Sketch" type="design" icon="" />
-            <skill name="Unity" type="games" icon="" />
-            <skill name="Love2D" type="games" icon="" />
+          <skill-set :skills="[
+            // Software
+            [ 'Photoshop', 'design', '' ],
+            [ 'Sketch', 'design', '' ],
+            [ 'Unity', 'games', '' ],
+            [ 'Love2D', 'games', '' ],
 
-            <!-- Languages -->
-            <skill name="Lua" type="games" icon="" />
-            <skill name="C#" :type="[ 'web', 'games' ]" icon="" />
-            <skill name="SASS/CSS" type="web" icon="" />
-            <skill name="JavaScript" type="web" icon="" />
+            // Languages
+            [ 'Lua', 'games', '' ],
+            [ 'C#', [ 'web', 'games' ], '' ],
+            [ 'SASS/CSS', 'web', '' ],
+            [ 'JavaScript', 'web', '' ],
 
-            <!-- Technologies -->
-            <skill name="NodeJS" type="web" icon="" />
-            <skill name="VueJS" type="web" icon="" />
-            <skill name="React" type="web" icon="" />
-            <skill name="Cordova" type="web" icon="" />
+            // Technologies
+            [ 'NodeJS', 'web', '' ],
+            [ 'VueJS', 'web', '' ],
+            [ 'React', 'web', '' ],
+            [ 'Cordova', 'web', '' ],
+            [ 'HTML5', 'web', '' ],
 
-            <!-- Skills -->
-            <skill name="UI/UX" :type="[ 'web', 'games', 'design' ]" icon="" />
-            <skill name="SEO" type="web" icon="" />
-          </skill-set>
+            // Skills
+            [ 'UI/UX', [ 'web', 'games', 'design' ], '' ],
+            [ 'SEO', 'web', '' ],
+          ]" />
         </content-column>
 
       </content-columns>
@@ -63,20 +76,32 @@
     <!-- Messaging CRM -->
 
     <content-section>
-      <project title="Project Title" category="Lorem Ipsum">
+      <project title="Gabbi" category="Mobile App, Front-End, UI/UX">
         <template slot="pictures">
           <img />
         </template>
         <template slot="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Curabitur rutrum ut nisi id pharetra. Maecenas in lobortis metus.
+          Gabbi is a real-time messaging app for real-estate professionals. The
+          hybrid mobile app, built with VueJS and Cordova, gives agents a way to
+          manage their clients using CRM-like features without having to manage
+          a full-blown CRM.
+          <br />
+          Backed by a machine-learning system, Gabbi is able to
+          automatically notify the agent of important events as well as categorize,
+          reply-to and follow-up with prospective and existing clients and leads.
+          <br />
+          <span class="faded">
+            Like what you see? Check out more on my <a href="">Dribbble</a> page.
+          </span>
         </template>
         <template slot="tools-used">
-          <li>Lorem ipsum</li>
-          <li>Dolor sit amet</li>
+          <li>VueJS</li>
+          <li>SASS/CSS</li>
+          <li>Sketch</li>
+          <li>Cordova</li>
         </template>
         <template slot="subtitle">
-          Check out my <a>Dribbble</a>.
+          <a class="link" href="//www.gabbi.ai" target="_blank">Visit Website</a>
         </template>
       </project>
     </content-section>
@@ -86,20 +111,26 @@
     <!-- Animeta or Anchors Away -->
 
     <content-section>
-      <project title="Project Title" category="Lorem Ipsum">
+      <project title="Animeta" category="JavaScript Library, Front-End">
         <template slot="pictures">
           <img />
         </template>
         <template slot="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Curabitur rutrum ut nisi id pharetra. Maecenas in lobortis metus.
+          The built-in transition system in VueJS is a breeze to use, but there
+          is only so much you can do with CSS transitions. I wanted something more
+          robust, but with same ease of use. Enter: Animeta.
+          <br />
+          This VueJS library marries the awesome power of AnimeJS with Vue's
+          great built-in transition system, allowing developers to effortlessly
+          implement impressive animations and transitions in their Vue-based apps.
         </template>
         <template slot="tools-used">
-          <li>Lorem ipsum</li>
-          <li>Dolor sit amet</li>
+          <li>JavaScript</li>
+          <li>VueJS</li>
+          <li>AnimeJS</li>
         </template>
         <template slot="subtitle">
-          Check out my <a>Dribbble</a>.
+          <a class="link" href="//github.com/jordanranson/animeta" target="_blank">Visit Website</a>
         </template>
       </project>
     </content-section>
@@ -109,20 +140,24 @@
     <!-- Spores game -->
 
     <content-section>
-      <project title="Project Title" category="Lorem Ipsum">
+      <project title="Pods" category="Video Game, Game Design">
         <template slot="pictures">
           <img />
         </template>
         <template slot="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Curabitur rutrum ut nisi id pharetra. Maecenas in lobortis metus.
+          A game that's like checkers, but isn't. The goal is to spread your pods
+          across the board, leaving as little space for your opponent as possible.
+          <br />
+          Tap your pods to duplicate or jump. Landing adjacent to an opponents
+          pod will convert them to your color. The side with the most pods of their color
+          when the board is filled, wins.
         </template>
         <template slot="tools-used">
-          <li>Lorem ipsum</li>
-          <li>Dolor sit amet</li>
+          <li>Lua</li>
+          <li>PICO-8</li>
         </template>
         <template slot="subtitle">
-          Check out my <a>Dribbble</a>.
+          <a class="link" href="//www.lexaloffle.com/bbs/?tid=" target="_blank">Visit Website</a>
         </template>
       </project>
     </content-section>
@@ -155,6 +190,10 @@
       <contact-form />
     </content-section>
 
+    <!-- Footer -->
+
+    <page-footer />
+
   </div>
 </template>
 
@@ -167,11 +206,11 @@ import HeroSection from './components/HeroSection.vue'
 import Job from './components/Job.vue'
 import JobTimeline from './components/JobTimeline.vue'
 import Navigation from './components/Navigation.vue'
+import PageFooter from './components/PageFooter.vue'
 import Profile from './components/Profile.vue'
 import Project from './components/Project.vue'
 import SectionRule from './components/SectionRule.vue'
 import SectionTitle from './components/SectionTitle.vue'
-import Skill from './components/Skill.vue'
 import SkillSet from './components/SkillSet.vue'
 
 export default {
@@ -186,11 +225,11 @@ export default {
     Job,
     JobTimeline,
     Navigation,
+    PageFooter,
     Profile,
     Project,
     SectionRule,
     SectionTitle,
-    Skill,
     SkillSet
   }
 }
@@ -203,4 +242,9 @@ export default {
 
 #app
   font-family: 'Work Sans', 'Avenir', Helvetica, Arial, sans-serif
+
+.is-hidden-mobile
+  display: none
+  +desktop
+    display: inline-flex
 </style>

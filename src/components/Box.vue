@@ -1,5 +1,5 @@
 <template>
-  <div class="box" :style="{ backgroundImage }">
+  <div :class="{ 'box': true, 'has-shadow': hasShadow }" :style="{ backgroundImage }">
     <slot />
   </div>
 </template>
@@ -17,6 +17,10 @@ export default {
   computed: {
     backgroundImage () {
       return this.bgUrl && `url("${this.bgUrl}")`
+    },
+
+    hasShadow () {
+      return !this.bgUrl
     }
   }
 }
@@ -27,9 +31,10 @@ export default {
   width: 100px
   height: 100px
   border-radius: 10px
-
   background-color: $white
   background-repeat: no-repeat
   background-size: cover
   background-position: 50% 50%
+  &.has-shadow
+    +box-shadow
 </style>

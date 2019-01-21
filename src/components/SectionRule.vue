@@ -9,4 +9,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.section-rule
+  margin: $margin-lg auto
 </style>

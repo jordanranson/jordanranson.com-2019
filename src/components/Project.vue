@@ -46,10 +46,37 @@ export default {
 <style lang="sass" scoped>
 .project-pictures
   width: 100%
-  height: 500px
+  height: calc(62.5vw - 2rem)
   background: #cbcbcb
   border-radius: 10px
+  margin-bottom: $margin
+  +desktop
+    width: 800px
+    height: 500px
+    margin-bottom: $margin-md
+  +wide-screen
+    width: 1200px
+    height: 750px
+    margin-left: -100px
 
 .project-details
-  display: flex
+  +desktop
+    display: flex
+
+.project-title
+  margin-bottom: $margin
+  .title
+    font-size: $title-size-sm
+  +desktop
+    min-width: 40%
+    margin-bottom: 0
+    margin-right: $margin-md
+    .title
+      font-size: $title-size
+  +wide-screen
+    min-width: 30%
+
+.project-description
+  .title
+    margin: $margin 0
 </style>

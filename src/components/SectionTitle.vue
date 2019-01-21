@@ -13,5 +13,9 @@ export default {
 
 <style lang="sass" scoped>
 .section-title
+  margin: $margin-lg 0
   text-align: center
+
+.title
+  margin-bottom: $margin-sm
 </style>

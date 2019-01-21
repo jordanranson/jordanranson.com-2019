@@ -8,7 +8,26 @@ $font-color: $dark-purple
 $font-color-light: $light-purple
 $rule-color: $light-purple
 
-$font-size: 18px
-$font-size-sm: 16px
-$title-size: 42px
-$title-size-sm: 22px
+$font-size: 1.125rem
+$font-size-sm: 1rem
+$title-size: 2.334em
+$title-size-sm: 1.223em
+
+$margin: 2rem
+$margin-sm: 1rem
+$margin-md: 4rem
+$margin-lg: 8rem
+
+=desktop
+  @media screen and (min-width: 768px)
+    @content
+
+=wide-screen
+  @media screen and (min-width: 1920px)
+    @content
+
+=box-shadow
+  box-shadow: 0 4px 9px rgba($font-color-light, 0.15)
+
+=box-shadow-inset
+  box-shadow: 0 4px 9px rgba($font-color-light, 0.15) inset

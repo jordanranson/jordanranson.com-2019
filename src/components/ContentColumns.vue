@@ -13,6 +13,6 @@ export default {
 <style lang="sass" scoped>
 .content-columns
   position: relative
-  @media screen and (min-width: 768px)
+  +desktop
     display: flex
 </style>

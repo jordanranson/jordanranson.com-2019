@@ -4,7 +4,7 @@
     <div class="job-details">
       <p><strong>{{ title }}</strong></p>
       <p>{{ company }}</p>
-      <p class="faded"><small><slot /></small></p>
+      <span class="faded"><small><slot /></small></span>
     </div>
   </div>
 </template>

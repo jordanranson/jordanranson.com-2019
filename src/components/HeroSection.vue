@@ -21,6 +21,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.hero-section
+  margin: $margin-lg 0
+
 .title
-  font-weight: 200
+  font-weight: normal
+  font-size: $title-size-sm
+  line-height: 1.5
+  +desktop
+    font-weight: 200
+    font-size: $title-size
+    line-height: 1.3
 </style>

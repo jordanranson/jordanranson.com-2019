@@ -40,6 +40,10 @@ export default {
 <style lang="sass" scoped>
 .profile-header
   display: flex
+  margin-bottom: $margin
+
+.profile-photo
+  margin-right: $margin-sm
 
 .profile-info
   display: flex
