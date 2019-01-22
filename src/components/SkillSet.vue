@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="skills">
-      <skill v-for="(skill, i) in filteredSkills" :name="skill[0]" :icon="skill[2]" />
+      <skill v-for="(skill, i) in filteredSkills" :name="skill[0]" :icon="skill[2]" :key="'skill'+i" />
     </div>
   </div>
 </template>

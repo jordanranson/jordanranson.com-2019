@@ -2,6 +2,9 @@
   <div class="project">
     <div class="project-pictures">
       <slot name="pictures" />
+      <div class="more-link">
+        <slot name="more-link" />
+      </div>
     </div>
     <div class="project-details">
       <div class="project-title">
@@ -19,7 +22,7 @@
         </p>
 
         <h4 class="title is-small">Tools Used</h4>
-        <ul>
+        <ul class="tools-used">
           <slot name="tools-used" />
         </ul>
       </div>
@@ -50,6 +53,10 @@ export default {
   background: #cbcbcb
   border-radius: 10px
   margin-bottom: $margin
+  overflow: hidden
+  img
+    width: 100%
+    height: auto
   +desktop
     width: 800px
     height: 500px
@@ -68,7 +75,7 @@ export default {
   .title
     font-size: $title-size-sm
   +desktop
-    min-width: 40%
+    min-width: 25%
     margin-bottom: 0
     margin-right: $margin-md
     .title
@@ -79,4 +86,10 @@ export default {
 .project-description
   .title
     margin: $margin 0
+
+.tools-used
+  li
+    display: inline
+    &:not(:last-child)::after
+      content: ', '
 </style>
