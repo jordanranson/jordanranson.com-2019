@@ -260,6 +260,18 @@ export default {
     SkillSet
   },
 
+  metaInfo: {
+    title: 'Jordan Ranson | UI/UX Designer, Front-End Developer', // set a title
+    htmlAttrs: {
+      lang: 'en'
+    },
+    meta: [
+      { name: 'robots', content: 'index, follow' },
+      { name: 'keywords', content: 'ui,ux,ui designer,ux designer,front-end,frontend,vuejs,vue,reactjs,react,javascript,app,mobile,lua' },
+      { name: 'description', content: 'The various works of Jordan Ranson, UI/UX designer and front-end developer.' },
+    ]
+  },
+
   data () {
     return {
       scrollPos: 0,
