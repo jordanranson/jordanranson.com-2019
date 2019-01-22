@@ -67,7 +67,7 @@
     <content-section>
       <project title="Gabbi" category="Mobile App, Front-End, UI/UX">
         <template slot="pictures">
-          <img :src="require('./assets/Gabbi.ai.png')" />
+          <img :src="require('./assets/Gabbi.ai.png')" alt="Screenshots of Gabbi.ai." />
         </template>
         <template slot="description">
           Gabbi is a real-time messaging app for real-estate professionals. The
@@ -102,7 +102,7 @@
     <content-section>
       <project title="Animeta" category="JavaScript Library, Front-End">
         <template slot="pictures">
-          <img :src="require('./assets/Animeta.png')" />
+          <img :src="require('./assets/Animeta.png')" alt="Animeta logo." />
         </template>
         <template slot="description">
           The built-in transition system in VueJS is a breeze to use, but there
@@ -135,7 +135,7 @@
     <content-section>
       <project title="Real-Estate Website" category="Web Design, Front-End, UI/UX">
         <template slot="pictures">
-          <img :src="require('./assets/PropertyListing.png')" />
+          <img :src="require('./assets/PropertyListing.png')" alt="A real-estate property listing page." />
         </template>
         <template slot="description">
           A real-estate property listing page.
@@ -163,7 +163,7 @@
     <content-section>
       <project title="Pods" category="Video Game, Game Design">
         <template slot="pictures">
-          <img :src="require('./assets/Pods.png')" />
+          <img :src="require('./assets/Pods.png')" alt="Screenshot of Pods gameplay." />
         </template>
         <template slot="description">
           A game that's like checkers, but isn't. The goal is to spread your pods
@@ -206,6 +206,7 @@
     </content-section>
 
     <section-title>Contact Me</section-title>
+    <a name="contact"></a>
 
     <content-section>
       <contact-form /><!-- TODO: form -->
