@@ -36,7 +36,8 @@ export default {
     },
 
     checkInView () {
-      this.isInView = (this.offsetTop - (window.innerHeight * 0.67)) <= this.app.scrollPos
+      this.isInView = (window.innerWidth <= 768)
+        || ((this.offsetTop - (window.innerHeight * 0.67)) <= this.app.scrollPos)
     }
   }
 }
