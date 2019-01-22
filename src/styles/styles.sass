@@ -34,7 +34,21 @@ p
 
 .link
   display: inline-flex
-  text-decoration: underline
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: -0.05em
+    left: 10%
+    right: 10%
+    border-bottom: solid 1px $font-color-light
+    transition: all 150ms ease-in-out
+  &:hover::after
+    left: 0
+    right: 0
+    border-bottom-color: $accent !important
+  &.faded::after
+      border-bottom-color: rgba($font-color-light, 0.6)
 
 .title
   font-weight: 600

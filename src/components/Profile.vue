@@ -7,7 +7,10 @@
       <div class="profile-info">
         <div class="profile-info-inner">
           <h4 class="title is-small">Jordan Ranson</h4>
-          <p class="faded">{{ location }}</p>
+          <p class="profile-location faded">
+            <img :src="require('../assets/marker.png')" />
+            {{ location }}
+          </p>
         </div>
       </div>
     </div>
@@ -47,6 +50,14 @@ export default {
 
 .profile-info
   display: flex
+
+.profile-location
+  display: flex
+  align-items: center
+  img
+    width: 22px
+    height: 22px
+    margin-right: 3px
 
 .profile-info-inner
   margin: auto

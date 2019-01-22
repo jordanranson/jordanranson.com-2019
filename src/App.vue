@@ -23,7 +23,9 @@
           <profile photo-url="//avatars0.githubusercontent.com/u/753511" location="Alberta, Canada" />
           <p>
             Over the past decade I've honed a passion for technology into a diverse set of
-            user-experience related skills. I typically work on web-based applications,
+            user-experience related skills.
+            <br /><br />
+            I typically work on web-based applications,
             both mobile and desktop, designing workflows and interfaces, and helping
             implement these concepts in code. Even so, I'm open to new experiences
             and love exploring new technologies and industries.
@@ -37,28 +39,21 @@
         <!-- Skills -->
         <content-column>
           <skill-set :skills="[
-            // Software
-            [ 'Photoshop', 'design', '' ],
-            [ 'Sketch', 'design', '' ],
-            [ 'Unity', 'games', '' ],
-            [ 'Love2D', 'games', '' ],
-
-            // Languages
-            [ 'Lua', 'games', '' ],
-            [ 'C#', [ 'web', 'games' ], '' ],
-            [ 'SASS/CSS', 'web', '' ],
-            [ 'JavaScript', 'web', '' ],
-
-            // Technologies
-            [ 'NodeJS', 'web', '' ],
-            [ 'VueJS', 'web', '' ],
-            [ 'React', 'web', '' ],
-            [ 'Cordova', 'web', '' ],
-            [ 'HTML5', 'web', '' ],
-
-            // Skills
-            [ 'UI/UX', [ 'web', 'games', 'design' ], '' ],
-            [ 'SEO', 'web', '' ],
+            [ 'JavaScript', 'web', 'JavaScript' ],
+            [ 'VueJS', 'web', 'VueJS' ],
+            [ 'React', 'web', 'ReactJS' ],
+            [ 'SASS/CSS', [ 'design', 'web' ], 'SASS' ],
+            [ 'Sketch', 'design', 'Sketch' ],
+            [ 'Photoshop', 'design', 'Photoshop' ],
+            [ 'Mocha', 'web', 'Mocha' ],
+            [ 'NodeJS', 'web', 'NodeJS' ],
+            [ 'Cordova', 'web', 'Cordova' ],
+            [ 'HTML5', 'web', 'HTML5' ],
+            [ 'SEO', 'web', 'SEO' ],
+            [ 'C#', [ 'web', 'games' ], 'CSharp' ],
+            [ 'Unity', 'games', 'Unity' ],
+            [ 'Lua', 'games', 'Lua' ],
+            [ 'Love2D', 'games', 'Love2D' ]
           ]" />
         </content-column>
 
@@ -135,7 +130,35 @@
 
     <section-rule />
 
-    <!-- Spores game -->
+    <!-- Real estate website -->
+
+    <content-section>
+      <project title="Real-Estate Website" category="Web Design, Front-End, UI/UX">
+        <template slot="pictures">
+          <img :src="require('./assets/PropertyListing.png')" />
+        </template>
+        <template slot="description">
+          A real-estate property listing page.
+          <br /><br />
+          Pictures are important in real-estate sales, so the small gallery slider allows you to see more photos at once, while the larger upper gallery gives you a nice expanded, uncropped view.
+          <br /><br />
+          The box to the right would scroll with the page, allowing the viewer to favourite the property, contact the agent, or schedule a viewing from anywhere on the page.
+          <br /><br />
+          <span class="faded">
+            Want to see more? Take a look at my <a href="//dribbble.com/jordanranson" class="link" target="_blank">Dribbble</a> page.
+          </span>
+        </template>
+        <template slot="tools-used">
+          <li>VueJS</li>
+          <li>SASS/CSS</li>
+          <li>Sketch</li>
+        </template>
+      </project>
+    </content-section>
+
+    <section-rule />
+
+    <!-- Pods game -->
 
     <content-section>
       <project title="Pods" category="Video Game, Game Design">
@@ -155,7 +178,7 @@
           <li>PICO-8</li>
         </template>
         <template slot="subtitle">
-          <a class="link" href="//www.lexaloffle.com/bbs/?tid=" target="_blank">Visit Website</a>
+          <!-- <a class="link" href="//www.lexaloffle.com/bbs/?tid=" target="_blank">Visit Website</a> -->
         </template>
       </project>
     </content-section>
@@ -185,7 +208,7 @@
     <section-title>Contact Me</section-title>
 
     <content-section>
-      <contact-form />
+      <contact-form /><!-- TODO: form -->
     </content-section>
 
     <!-- Footer -->
@@ -214,6 +237,12 @@ import SkillSet from './components/SkillSet.vue'
 export default {
   name: 'App',
 
+  provide () {
+    return {
+      app: this
+    }
+  },
+
   components: {
     ContactForm,
     ContentColumn,
@@ -229,6 +258,28 @@ export default {
     SectionRule,
     SectionTitle,
     SkillSet
+  },
+
+  data () {
+    return {
+      scrollPos: 0,
+      scrollHandler: undefined
+    }
+  },
+
+  created () {
+    this.scrollHandler = this.scroll.bind(this)
+    window.addEventListener('scroll', this.scrollHandler)
+  },
+
+  destroyed () {
+    window.removeEventListener('scroll', this.scrollHandler)
+  },
+
+  methods: {
+    scroll () {
+      this.scrollPos = window.scrollY
+    }
   }
 }
 </script>

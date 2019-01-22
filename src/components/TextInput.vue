@@ -43,7 +43,7 @@ export default {
   border: solid 2px $white
   transition: border-color 150ms
   &:focus
-    border-color: $font-color-light
+    border-color: $accent
 
 input
   height: 3rem

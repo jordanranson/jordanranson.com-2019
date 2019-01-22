@@ -1,7 +1,9 @@
 <template>
   <div class="project">
     <div class="project-pictures">
-      <slot name="pictures" />
+      <div class="pictures-inner" :style="{ opacity: isInView ? 1 : 0 }">
+        <slot name="pictures" />
+      </div>
       <div class="more-link">
         <slot name="more-link" />
       </div>
@@ -31,8 +33,14 @@
 </template>
 
 <script>
+import isInView from '@/mixins/is-in-view.js'
+
 export default {
   name: 'Project',
+
+  mixins: [
+    isInView
+  ],
 
   props: {
     title: {
@@ -49,12 +57,16 @@ export default {
 <style lang="sass" scoped>
 .project-pictures
   width: 100%
-  height: calc(62.5vw - 2rem)
-  background: #cbcbcb
-  border-radius: 10px
   margin-bottom: $margin
+
+.pictures-inner
+  width: 100%
+  height: calc(62.5vw - 2rem)
+  border-radius: 10px
+  opacity: 0
   overflow: hidden
-  img
+  transition: opacity 600ms
+  /deep/ img
     width: 100%
     height: auto
   +desktop
@@ -92,4 +104,5 @@ export default {
     display: inline
     &:not(:last-child)::after
       content: ', '
+
 </style>

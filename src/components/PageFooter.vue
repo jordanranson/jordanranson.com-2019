@@ -2,7 +2,7 @@
   <footer class="page-footer faded">
     <content-inner class="page-footer-inner">
       <div class="footer-left">&copy; {{ currentYear }} Jordan Ranson</div>
-      <div class="footer-right">Check out the source for this page on <a href="">GitHub</a>.</div>
+      <div class="footer-right">Check out the source for this page on <a class="link" href="//github.com/jordanranson/jordanranson.com-2019" target="_blank">GitHub</a>.</div>
     </content-inner>
   </footer>
 </template>

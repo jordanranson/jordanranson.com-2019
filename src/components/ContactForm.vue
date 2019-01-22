@@ -1,7 +1,7 @@
 <template>
   <div class="contact-form">
 
-    <div v-if="success" class="form">
+    <!-- <div v-if="success" class="form">
       <p>Success!</p>
     </div>
     <form v-else ref="form" class="form" @submit="submitForm">
@@ -18,31 +18,34 @@
       <div class="field">
         <submit-button class="form-button">Send Message</submit-button>
       </div>
-    </form>
+    </form> -->
 
-    <div class="contact-info">
-      <h4 class="title is-small">Email</h4>
-      <p><a class="faded">jordan@jordanranson.com</a></p>
-      <br />
-
-      <h4 class="title is-small">Twitter</h4>
-      <p><a class="link faded" href="">@jordanranson</a></p>
+    <div class="contact-info" style="display:flex;width:100%">
+      <div style="flex:1">
+        <h4 class="title is-small">Email</h4>
+        <p><a class="faded">jordan@jordanranson.com</a></p>
+      </div>
+      <!-- <br /> -->
+      <div style="flex:1">
+        <h4 class="title is-small">Twitter</h4>
+        <p><a class="link faded" href="">@jordanranson</a></p>
+      </div>
     </div>
 
   </div>
 </template>
 
 <script>
-import SubmitButton from '@/components/SubmitButton.vue'
-import TextInput from '@/components/TextInput.vue'
+// import SubmitButton from '@/components/SubmitButton.vue'
+// import TextInput from '@/components/TextInput.vue'
 
 export default {
   name: 'ContactForm',
 
-  components: {
-    SubmitButton,
-    TextInput
-  },
+  // components: {
+  //   SubmitButton,
+  //   TextInput
+  // },
 
   data () {
     return {
@@ -67,8 +70,7 @@ export default {
         },
         body: JSON.stringify(data)
       })
-      .then((res) => {
-        console.log(res)
+      .then(() => {
       })
     }
   }

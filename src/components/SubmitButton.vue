@@ -22,10 +22,10 @@ export default {
   border: none
   outline: none
   letter-spacing: -0.025em
-  +box-shadow
   border: solid 2px $light-purple
   padding: 0 $margin-sm
   transition: border-color 150ms
+  +box-shadow
   &:focus
-    border-color: $dark-purple
+    border-color: $accent
 </style>

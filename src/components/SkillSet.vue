@@ -7,11 +7,12 @@
         <a :class="{ 'is-active': filter === 'web' }" @click="filter = 'web'">Web</a>
         <a :class="{ 'is-active': filter === 'design' }" @click="filter = 'design'">Design</a>
         <a :class="{ 'is-active': filter === 'games' }" @click="filter = 'games'">Games</a>
+        <div class="filter-border" :style="filterBorderStyle"></div>
       </div>
     </div>
-    <div class="skills">
+    <transition-group class="skills" name="skills" tag="div">
       <skill v-for="(skill, i) in filteredSkills" :name="skill[0]" :icon="skill[2]" :key="'skill'+i" />
-    </div>
+    </transition-group>
   </div>
 </template>
 
@@ -33,23 +34,62 @@ export default {
 
   data () {
     return {
-      filter: false
+      filter: false,
+      borderStyle: {}
     }
   },
 
   computed: {
     filteredSkills () {
+      const { filter } = this
+
       return this.skills.filter((skill) => {
-        if (!this.filter) return true
+        if (!filter) return true
 
         const type = skill[1]
 
         if (typeof type === 'string') {
-          return type === this.filter
+          return type === filter
         }
 
-        return type.includes(this.filter)
+        return type.includes(filter)
       })
+    },
+
+    filterBorderStyle () {
+      const { borderStyle } = this
+
+      return {
+        width: `${borderStyle.width}px`,
+        transform: `translateX(${borderStyle.left}px)`
+      }
+    }
+  },
+
+  mounted () {
+    this.setBorderStyle()
+  },
+
+  methods: {
+    setBorderStyle () {
+      this.$nextTick(() => {
+        const link = this.$el.querySelector('a.is-active')
+        const linkRect = link.getBoundingClientRect()
+
+        const filters = this.$el.querySelector('.skill-filters')
+        const filtersRect = filters.getBoundingClientRect()
+
+        this.$set(this, 'borderStyle', {
+          left: Math.round(linkRect.left - filtersRect.left),
+          width: Math.round(linkRect.width)
+        })
+      })
+    }
+  },
+
+  watch: {
+    filter () {
+      this.setBorderStyle()
     }
   }
 }
@@ -62,20 +102,42 @@ export default {
   margin-bottom: $margin
 
 .skill-filters
+  position: relative
   margin-left: auto
   a
     display: inline-flex
     margin-left: $margin-sm
-    border-bottom: solid 1px $dark-purple
     cursor: pointer
+    color: $font-color-light
+    transition: all 150ms
+    &:first-child
+      margin-left: 0
     &.is-active
       cursor: default
-    &:not(.is-active)
-      color: $font-color-light
-      border: none
+      color: $font-color
+  &:hover
+    .filter-border
+      border-bottom-color: $accent
+
+.filter-border
+  position: absolute
+  bottom: -0.05em
+  left: 0
+  width: 50px
+  transition: all 150ms
+  border-bottom: solid 1px $font-color-light
 
 .skills
   display: flex
   flex-wrap: wrap
   margin: -($margin-sm / 2)
+
+.skills-enter-active,
+.skills-leave-active
+  transition: all 300ms
+
+.skills-enter,
+.skills-leave-to
+  opacity: 0
+  transform: scale(0.9)
 </style>

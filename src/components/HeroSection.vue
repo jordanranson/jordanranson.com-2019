@@ -23,6 +23,7 @@ export default {
 <style lang="sass" scoped>
 .hero-section
   margin: $margin-lg 0
+  padding-top: $margin
 
 .title
   font-weight: normal

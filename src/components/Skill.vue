@@ -1,7 +1,7 @@
 <template>
   <box class="skill">
     <div class="skill-inner">
-      <span class="skill-icon"></span><br />
+      <span class="skill-icon" :style="style"></span><br />
       <span class="skill-name"><small>{{ name }}</small></span>
     </div>
   </box>
@@ -24,6 +24,18 @@ export default {
 
     icon: {
       type: String
+    }
+  },
+
+  computed: {
+    image () {
+      return require(`../assets/skill-icons/${this.icon}.png`)
+    },
+
+    style () {
+      return {
+        backgroundImage: `url("${this.image}")`
+      }
     }
   }
 }
@@ -49,10 +61,12 @@ $skill-width: calc((100vw - 4rem) / 3)
   margin: auto
 
 .skill-icon
-  width: 24px
-  height: 24px
+  width: 32px
+  height: 32px
   display: inline-flex
-  background: #cbcbcb
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: 50% 50%
 
 .skill-name
   display: inline-flex
