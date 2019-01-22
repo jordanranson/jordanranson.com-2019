@@ -20,7 +20,7 @@
       </div>
     </form> -->
 
-    <div class="contact-info" style="display:flex;width:100%">
+    <div class="contact-info">
       <div style="flex:1">
         <h4 class="title is-small">Email</h4>
         <p><a class="faded">jordan@jordanranson.com</a></p>
@@ -109,6 +109,8 @@ export default {
     margin-bottom: $margin-sm
   +desktop
     order: 1
+    width: 100%
+    display: flex
 
 .field
   // todo
