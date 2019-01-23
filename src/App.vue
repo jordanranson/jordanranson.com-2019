@@ -123,7 +123,7 @@
           <li>AnimeJS</li>
         </template>
         <template slot="subtitle">
-          <a class="link" href="//github.com/jordanranson/animeta" target="_blank">Visit Website</a>
+          <a class="link" href="//jordanranson.com/projects/animeta/" target="_blank">Visit Website</a>
         </template>
       </project>
     </content-section>
